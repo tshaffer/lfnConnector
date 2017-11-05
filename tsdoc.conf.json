@@ -1,0 +1,27 @@
+{
+  "source": {
+    "include": "./lib",
+    "includePattern" : "(\\.d)?\\.ts$"
+  },
+  "plugins": [
+    "./node_modules/ts2jsdoc/plugin.js"
+  ],
+  "opts": {
+    "destination": "./doc",
+    "package": "./package.json",
+    "template": "./node_modules/ink-docstrap/template"
+  },
+  "templates": {
+    "systemName": "bsCore",
+    "theme": "cerulean",
+    "navType": "inline",
+    "inverseNav": false,
+    "tableOfContents": true,
+    "linenums": false,
+    "collapseSymbols": false,
+    "copyright": "Copyright &copy; 2017 BrightSign LLC",
+    "outputSourceFiles": true,
+    "outputSourcePath": true,
+    "sort": true
+  }
+}

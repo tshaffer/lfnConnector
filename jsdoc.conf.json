@@ -1,0 +1,10 @@
+{
+  "source": {
+    "include": "./temp/doc/"
+  },
+  "opts": {
+    "destination": "./doc",
+    "package": "./package.json",
+    "recurse": true
+  }
+}
