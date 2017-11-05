@@ -19,7 +19,7 @@ interface FilesToCopy  {
   file : FileToCopy[];
 }
 
-export function uploadFileToBrightSign(hostname: string, filePath: string, fileName: string, sha1: string) {
+function uploadFileToBrightSign(hostname: string, filePath: string, fileName: string, sha1: string) {
 
   const encodedFileName = encodeURIComponent(fileName);
 
@@ -39,19 +39,19 @@ export function uploadFileToBrightSign(hostname: string, filePath: string, fileN
   return httpUploadFile(hostname, endpoint, filePath, headers);
 }
 
-function uploadFilesToBrightSign(publishParams: any, filesToPublish: FileToPublish[], hostname: string) {
+function uploadFilesToBrightSign(filesToPublish: FileToPublish[], hostname: string) {
 
   return new Promise( (resolve, reject) => {
 
-    let index = 0;
+    const index = 0;
     const numFilesToCopy = filesToPublish.length;
 
     const promises : any = [];
     filesToPublish.forEach((fileToPublish) => {
 
-      if (publishParams.progressCallback) {
-        publishParams.progressCallback(++index, numFilesToCopy, fileToPublish.fileName, fileToPublish.filePath);
-      }
+      // if (publishParams.progressCallback) {
+      //   publishParams.progressCallback(++index, numFilesToCopy, fileToPublish.fileName, fileToPublish.filePath);
+      // }
 
       promises.push(uploadFileToBrightSign(hostname, fileToPublish.filePath,
         fileToPublish.fileName, fileToPublish.hash));
@@ -66,7 +66,7 @@ function uploadFilesToBrightSign(publishParams: any, filesToPublish: FileToPubli
   });
 }
 
-function uploadToBrightSign(publishParams: any, ipAddress: string, tmpDir: string) {
+export function uploadToBrightSign(ipAddress: string, tmpDir: string) {
 
   return new Promise((resolve, reject) => {
 
@@ -86,7 +86,7 @@ function uploadToBrightSign(publishParams: any, ipAddress: string, tmpDir: strin
       return response.json();
     }).then( (rawFilesToCopy) => {
       const filesToCopy = getFilesToCopy(rawFilesToCopy);
-      return uploadFilesToBrightSign(publishParams, filesToCopy, ipAddress);
+      return uploadFilesToBrightSign(filesToCopy, ipAddress);
 
     }).then( () => {
 

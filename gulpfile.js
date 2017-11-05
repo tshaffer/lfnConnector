@@ -10,10 +10,7 @@ gulp.task('cleanTypes', function () {
 });
 
 let declSrc = [
-  './temp/decl/services/deviceSetup.d.ts',
-  './temp/decl/constants/DeviceSetupProperties.d.ts',
-  './temp/decl/controller/deviceSetup.d.ts',
-  './temp/decl/store/deviceSetup.d.ts'
+  './temp/decl/services/publisher.d.ts',
 ];
 
 function consolidateBsCoreCoreImports () {
