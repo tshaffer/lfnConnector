@@ -19,13 +19,15 @@
     "@types/form-data": "^2.2.0",
     "core-js": "^2.4.1",
     "form-data": "^2.2.0",
-    "fs-extra": "4.0.2",
+    "fs-extra": "1.0.0",
     "isomorphic-fetch": "2.2.1",
     "lodash": "^4.17.4",
     "source-map-support": "^0.4.6",
     "tsutils": "^2.1.0"
   },
   "devDependencies": {
+    "@types/fs-extra": "4.0.3",
+    "@types/isomorphic-fetch": "0.0.34",
     "@types/lodash": "^4.14.73",
     "@types/node": "^8.0.17",
     "awesome-typescript-loader": "^3.1.3",
