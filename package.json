@@ -1,5 +1,5 @@
 {
-  "name": "lfnconnector",
+  "name": "@brightsign/lfnconnector",
   "description": "Connects Bacon to BrightSign devices setup for local file networking",
   "version": "0.0.1",
   "main": "./dist/lfnconnector.js",
